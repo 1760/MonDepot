@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.web.HTMLEditor?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="977.0" styleClass="main-panel" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="zambou.test.ProduitController">
+   <top>
+      <Label prefHeight="38.0" prefWidth="126.0" text="Caissier" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <TableView fx:id="Table_Produit" onMouseClicked="#zams" prefHeight="45.0" prefWidth="972.0" BorderPane.alignment="CENTER">
+        <columns>
+        
+        	<TableColumn text="Id-Header">
+            	<cellValueFactory>
+                	<PropertyValueFactory property="id" />
+                </cellValueFactory>
+            </TableColumn>
+        
+        
+        	<TableColumn text="Code_Produit">
+            	<cellValueFactory>
+                	<PropertyValueFactory property="code_produit" />
+                </cellValueFactory>
+            </TableColumn>
+        
+        	<TableColumn text="Reference">
+            	<cellValueFactory>
+                	<PropertyValueFactory property="reference" />
+                </cellValueFactory>
+            </TableColumn>
+        
+        	<TableColumn text="Designation">
+            	<cellValueFactory>
+                	<PropertyValueFactory property="designation" />
+                </cellValueFactory>
+            </TableColumn>
+        
+        	<TableColumn text="Rangement">
+            	<cellValueFactory>
+                	<PropertyValueFactory property="rangement" />
+                </cellValueFactory>
+            </TableColumn>
+            
+            <TableColumn text="Fournisseur">
+            	<cellValueFactory>
+                	<PropertyValueFactory property="fournisseur" />
+                </cellValueFactory>
+            </TableColumn>
+            
+            <TableColumn text="Remise">
+            	<cellValueFactory>
+                	<PropertyValueFactory property="remise" />
+                </cellValueFactory>
+            </TableColumn>
+            
+            <TableColumn text="Prix">
+            	<cellValueFactory>
+                	<PropertyValueFactory property="prix" />
+                </cellValueFactory>
+            </TableColumn>
+            
+            <TableColumn text="Stock">
+            	<cellValueFactory>
+                	<PropertyValueFactory property="stock" />
+                </cellValueFactory>
+            </TableColumn>
+        
+        
+        </columns>
+      </TableView>
+      
+      
+      
+
+      
+      
+   </center>
+   <bottom>
+      <GridPane prefHeight="307.0" prefWidth="976.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="306.0" minWidth="10.0" prefWidth="199.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="323.0" minWidth="10.0" prefWidth="323.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="386.0" minWidth="10.0" prefWidth="347.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="266.0" minHeight="0.0" prefHeight="69.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="266.0" minHeight="10.0" prefHeight="187.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="145.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="25.0" prefWidth="80.0" text="Stock" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" top="160.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="25.0" prefWidth="80.0" text="Prix" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" top="20.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="25.0" prefWidth="80.0" text="Remise %" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" top="-50.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="25.0" prefWidth="80.0" text="Fournisseur" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" top="-120.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="Txt_Fournisseur" prefHeight="25.0" prefWidth="80.0" promptText="four" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="100.0" right="30.0" top="-120.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="Txt_Remise" prefHeight="25.0" prefWidth="80.0" promptText="remise" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="100.0" right="30.0" top="-50.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="Txt_Prix" prefHeight="25.0" prefWidth="80.0" promptText="prix" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="100.0" right="30.0" top="20.0" />
+               </GridPane.margin>
+            </TextField>
+            <Label prefHeight="25.0" prefWidth="80.0" text="Code_Produit" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" top="-120.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="25.0" prefWidth="80.0" text="Reference" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" top="-50.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="25.0" prefWidth="80.0" text="Rangement" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" top="90.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="25.0" prefWidth="80.0" text="Designation" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" top="20.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="Txt_Rangement" prefHeight="25.0" prefWidth="80.0" promptText="ran" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="100.0" right="30.0" top="90.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="Txt_Designation" prefHeight="25.0" prefWidth="80.0" promptText="des" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="100.0" right="30.0" top="20.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="Txt_Reference" prefHeight="25.0" prefWidth="80.0" promptText="ref" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="100.0" right="30.0" top="-50.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="Txt_Produit" prefHeight="25.0" prefWidth="80.0" promptText="prod" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="100.0" right="30.0" top="-120.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="Txt_Stock" onKeyReleased="#Subtotal_Label" prefHeight="25.0" prefWidth="80.0" promptText="stoc" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="100.0" right="30.0" top="160.0" />
+               </GridPane.margin>
+            </TextField>
+            <Label prefHeight="25.0" prefWidth="150.0" text="Recherche Par Categorie">
+               <GridPane.margin>
+                  <Insets left="10.0" top="-50.0" />
+               </GridPane.margin>
+            </Label>
+            <ComboBox fx:id="Com_Rech" prefHeight="25.0" prefWidth="100.0">
+               <GridPane.margin>
+                  <Insets left="145.0" top="-50.0" />
+               </GridPane.margin>
+            </ComboBox>
+            <Button mnemonicParsing="false" onAction="#Produit_Recherche" prefHeight="25.0" prefWidth="80.0" text="Recherche">
+               <GridPane.margin>
+                  <Insets left="10.0" top="15.0" />
+               </GridPane.margin>
+            </Button>
+            <TextField prefHeight="25.0" prefWidth="80.0">
+               <GridPane.margin>
+                  <Insets left="100.0" right="30.0" top="15.0" />
+               </GridPane.margin>
+            </TextField>
+            <Label prefHeight="25.0" prefWidth="80.0" text="Vente" GridPane.columnIndex="2">
+               <GridPane.margin>
+                  <Insets left="90.0" top="-50.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="25.0" prefWidth="90.0" text="Numero facture " GridPane.columnIndex="2" />
+            <TextField fx:id="Txt_Fac" prefHeight="25.0" prefWidth="80.0" GridPane.columnIndex="2">
+               <GridPane.margin>
+                  <Insets left="120.0" right="170.0" />
+               </GridPane.margin>
+            </TextField>
+            <Button mnemonicParsing="false" onAction="#Vente_Recherche" prefHeight="25.0" prefWidth="80.0" text="Recherche" GridPane.columnIndex="2">
+               <GridPane.margin>
+                  <Insets left="220.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Supprimer" GridPane.columnIndex="2">
+               <GridPane.margin>
+                  <Insets left="310.0" />
+               </GridPane.margin>
+            </Button>
+            <TableView fx:id="Table_Vente" prefHeight="174.0" prefWidth="437.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+              <columns>
+              
+             <TableColumn text="Id">
+            	<cellValueFactory>
+                	<PropertyValueFactory property="id" />
+                </cellValueFactory>
+            </TableColumn>
+            
+            
+            <TableColumn text="Prix_Vente">
+            	<cellValueFactory>
+                	<PropertyValueFactory property="Prix_Vente" />
+                </cellValueFactory>
+            </TableColumn>
+            
+            <TableColumn text="Stock_sortie">
+            	<cellValueFactory>
+                	<PropertyValueFactory property="Stock_Sortie" />
+                </cellValueFactory>
+            </TableColumn>
+            
+            <TableColumn text="Sub_Total">
+            	<cellValueFactory>
+                	<PropertyValueFactory property="Sub_Total" />
+                </cellValueFactory>
+            </TableColumn>
+              </columns>
+            </TableView>
+            <Label prefHeight="25.0" prefWidth="80.0" text="Total:" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets top="-30.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="Label_Total" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="180.0" top="-30.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="25.0" prefWidth="80.0" text="RP:" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="90.0" top="-30.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="25.0" prefWidth="70.0" text="Reste:" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="190.0" top="20.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="25.0" prefWidth="70.0" text="Cash:" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin></Label>
+            <TextField prefHeight="25.0" prefWidth="80.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="80.0" right="150.0" top="20.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="260.0" top="20.0" />
+               </GridPane.margin>
+            </TextField>
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Annuler" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="200.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Imprimer" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="110.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#Produit_Ajouter" prefHeight="25.0" prefWidth="80.0" text="Vendre " GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Button>
+            <Label fx:id="Label_Sub" prefHeight="25.0" prefWidth="80.0" text="0" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="100.0" top="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="25.0" prefWidth="80.0" text="RP" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="10.0" top="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="25.0" prefWidth="80.0" text="Nouveau Prix" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" top="90.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="Txt_Nou" prefHeight="25.0" prefWidth="80.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="100.0" right="30.0" top="90.0" />
+               </GridPane.margin>
+            </TextField>
+         </children>
+      </GridPane>
+   </bottom>
+</BorderPane>

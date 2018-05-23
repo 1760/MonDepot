@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="main-panel"
+ xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="zambou.test.DirecteurController">
+    
+
+  <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="241.0" minHeight="10.0" prefHeight="152.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="228.0" minHeight="0.0" prefHeight="70.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="241.0" minHeight="20.0" prefHeight="65.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="230.0" minHeight="0.0" prefHeight="57.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="184.0" minHeight="0.0" prefHeight="55.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button mnemonicParsing="false" onAction="#Gestion_Personnel" prefHeight="40.0" prefWidth="237.0" text="Gestion Personnel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#Gestion_Produit" prefHeight="40.0" prefWidth="237.0" text="Gestion Produit" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onAction="#Caissier" prefHeight="40.0" prefWidth="237.0" text="Caissier" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onAction="#Exit" prefHeight="40.0" prefWidth="237.0" text="Exit" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label prefHeight="40.0" prefWidth="200.0" text="         Directeur " GridPane.columnIndex="1">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>

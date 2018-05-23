@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.web.HTMLEditor?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="main-panel" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="zambou.test.ProduitController">
+   <top>
+      <Label prefHeight="38.0" prefWidth="126.0" text="Produit" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <TableView fx:id="Table_Produit" onMouseClicked="#zams" prefHeight="160.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <columns>
+        
+        	<TableColumn text="Id-Header">
+            	<cellValueFactory>
+                	<PropertyValueFactory property="id" />
+                </cellValueFactory>
+            </TableColumn>
+        
+        
+        	<TableColumn text="Code_Produit">
+            	<cellValueFactory>
+                	<PropertyValueFactory property="code_produit" />
+                </cellValueFactory>
+            </TableColumn>
+        
+        	<TableColumn text="Reference">
+            	<cellValueFactory>
+                	<PropertyValueFactory property="reference" />
+                </cellValueFactory>
+            </TableColumn>
+        
+        	<TableColumn text="Designation">
+            	<cellValueFactory>
+                	<PropertyValueFactory property="designation" />
+                </cellValueFactory>
+            </TableColumn>
+        
+        	<TableColumn text="Rangement">
+            	<cellValueFactory>
+                	<PropertyValueFactory property="rangement" />
+                </cellValueFactory>
+            </TableColumn>
+            
+            <TableColumn text="Fournisseur">
+            	<cellValueFactory>
+                	<PropertyValueFactory property="fournisseur" />
+                </cellValueFactory>
+            </TableColumn>
+            
+            <TableColumn text="Remise">
+            	<cellValueFactory>
+                	<PropertyValueFactory property="remise" />
+                </cellValueFactory>
+            </TableColumn>
+            
+            <TableColumn text="Prix">
+            	<cellValueFactory>
+                	<PropertyValueFactory property="prix" />
+                </cellValueFactory>
+            </TableColumn>
+            
+            <TableColumn text="Stock">
+            	<cellValueFactory>
+                	<PropertyValueFactory property="stock" />
+                </cellValueFactory>
+            </TableColumn>
+        
+        
+        </columns>
+      </TableView>
+      
+      
+      
+
+      
+      
+   </center>
+   <bottom>
+      <GridPane prefHeight="286.0" prefWidth="599.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="145.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="266.0" minHeight="10.0" prefHeight="213.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button mnemonicParsing="false" onAction="#Produit_Ajouter" prefHeight="25.0" prefWidth="100.0" text="Ajouter" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#Produit_Modifier" prefHeight="25.0" prefWidth="100.0" text="Modifier" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets left="120.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#Produit_Supprimer"  prefHeight="25.0" prefWidth="100.0" text="Supprimer" GridPane.columnIndex="2">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#Produit_Actualiser"  prefHeight="25.0" prefWidth="100.0" text="Actualiser" GridPane.columnIndex="2">
+               <GridPane.margin>
+                  <Insets left="120.0" />
+               </GridPane.margin>
+            </Button>
+            <Label prefHeight="25.0" prefWidth="80.0" text="Stock" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" top="180.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="25.0" prefWidth="80.0" text="Prix" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" top="120.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="25.0" prefWidth="80.0" text="Remise %" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" top="60.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="25.0" prefWidth="80.0" text="Fournisseur" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="Txt_Fournisseur" prefHeight="25.0" prefWidth="80.0" promptText="four" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="100.0" right="30.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="Txt_Remise" prefHeight="25.0" prefWidth="80.0" promptText="remise" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="100.0" right="30.0" top="60.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="Txt_Prix" prefHeight="25.0" prefWidth="80.0" promptText="prix" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="100.0" right="30.0" top="120.0" />
+               </GridPane.margin>
+            </TextField>
+            <Label prefHeight="25.0" prefWidth="150.0" text="Recherche Par Categorie" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Label>
+            <ComboBox fx:id="Com_Rech" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="180.0" right="20.0" />
+               </GridPane.margin>
+            </ComboBox>
+            <Button mnemonicParsing="false" onAction="#Produit_Recherche" prefHeight="25.0" prefWidth="100.0" text="Recherche" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" top="120.0" />
+               </GridPane.margin>
+            </Button>
+            <TextField fx:id="Txt_Rech" prefHeight="25.0" prefWidth="80.0" promptText="rech" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="130.0" right="20.0" top="120.0" />
+               </GridPane.margin>
+            </TextField>
+            <Label prefHeight="25.0" prefWidth="80.0" text="Code_Produit" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="25.0" prefWidth="80.0" text="Reference" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" top="60.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="25.0" prefWidth="80.0" text="Rangement" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" top="180.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="25.0" prefWidth="80.0" text="Designation" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" top="120.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="Txt_Rangement" prefHeight="25.0" prefWidth="80.0" promptText="ran" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="100.0" right="30.0" top="180.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="Txt_Designation" prefHeight="25.0" prefWidth="80.0" promptText="des" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="100.0" right="30.0" top="120.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="Txt_Reference" prefHeight="25.0" prefWidth="80.0" promptText="ref" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="100.0" right="30.0" top="60.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="Txt_Produit" prefHeight="25.0" prefWidth="80.0" promptText="prod" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="100.0" right="30.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="Txt_Stock" prefHeight="25.0" prefWidth="80.0" promptText="stoc" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="100.0" right="30.0" top="180.0" />
+               </GridPane.margin>
+            </TextField>
+         </children>
+      </GridPane>
+   </bottom>
+</BorderPane>
