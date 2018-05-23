@@ -324,7 +324,7 @@ public class CaissierController implements Initializable{
 		}
 		
 		public void Vente_Recherche() {
-			
+			importer();
 		}
 		public boolean test_stock() throws SQLException {
 			int old=0,dec=0;
