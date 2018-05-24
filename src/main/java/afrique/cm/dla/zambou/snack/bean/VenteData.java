@@ -44,7 +44,7 @@ public class VenteData {
 		return Sub_Total;
 	}
 
-	public void Sub_Total(String Sub_Total) {
+	public void setSub_Total(String Sub_Total) {
 		this.Sub_Total = Sub_Total;
 	}
 

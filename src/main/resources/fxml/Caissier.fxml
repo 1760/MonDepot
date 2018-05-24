@@ -222,12 +222,12 @@
                   <Insets left="220.0" />
                </GridPane.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Supprimer" GridPane.columnIndex="2">
+            <Button mnemonicParsing="false" onAction="#Vente_Supprimer" prefHeight="25.0" prefWidth="80.0" text="Supprimer" GridPane.columnIndex="2">
                <GridPane.margin>
                   <Insets left="310.0" />
                </GridPane.margin>
             </Button>
-            <TableView fx:id="Table_Vente" prefHeight="174.0" prefWidth="437.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <TableView fx:id="Table_Vente" onMouseClicked="#Vente_Mous" prefHeight="174.0" prefWidth="437.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
               <columns>
               
              <TableColumn text="Id">
@@ -290,7 +290,7 @@
                   <Insets left="260.0" top="20.0" />
                </GridPane.margin>
             </TextField>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Annuler" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <Button mnemonicParsing="false" onAction="#Vente_Effacer" prefHeight="25.0" prefWidth="80.0" text="Annuler" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="200.0" />
                </GridPane.margin>

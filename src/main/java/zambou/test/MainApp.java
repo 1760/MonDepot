@@ -20,8 +20,8 @@ public class MainApp extends Application {
 
         log.info("Starting Hello JavaFX and Maven demonstration application");
 
-        String fxmlFile = "/fxml/Login.fxml";
-        fxmlFile = "/fxml/Produit.fxml";
+        String fxmlFile = "/fxml/LoginMrc.fxml";
+       // fxmlFile = "/fxml/Produit.fxml";
         
         log.debug("Loading FXML for main view from: {}", fxmlFile);
         FXMLLoader loader = new FXMLLoader();

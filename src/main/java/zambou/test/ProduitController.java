@@ -110,11 +110,16 @@ public class ProduitController implements Initializable{
    }
    
    public void zams(MouseEvent ev) {
-		// data = Table_User.getSelectionModel().getSelectedItem();
-		//Txt_UserName.setText(data.getUsername());
-		//Txt_Matricule.setText(data.getMatricule());
-		//Txt_UserPassword.setText(data.getPassword());
-	    //Txt_Type.setValue(data.getType());
+	   data=new ProduitData();
+		data = Table_Produit.getSelectionModel().getSelectedItem();
+		Txt_Stock.setText(data.getStock());
+		Txt_Produit.setText(data.getCode_produit());
+		Txt_Reference.setText(data.getReference());
+	    Txt_Designation.setText(data.getDesignation());
+	    Txt_Rangement.setText(data.getRangement());
+	    Txt_Fournisseur.setText(data.getFournisseur());
+	    Txt_Prix.setText(data.getPrix());
+	    Txt_Remise.setText(data.getRemise());
 	
 		 
 	}

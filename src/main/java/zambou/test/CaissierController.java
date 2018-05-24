@@ -43,6 +43,8 @@ public class CaissierController implements Initializable{
 	private ProduitData data;
 	private VenteData ventedata;
 	ResultSet rs;
+	String Id_Del;
+	String invoice;
     BDD db;
     String id_Tmp,Code_Tmp,Ref_Tmp,Des_Tmp,Ran_Tmp,Four_Tmp,Rem_Tmp,Prix_Tmp,Stock_Tmp;
     public CaissierController() {
@@ -97,15 +99,7 @@ public class CaissierController implements Initializable{
     
 
    
-   public void zams(MouseEvent ev) {
-		// data = Table_User.getSelectionModel().getSelectedItem();
-		//Txt_UserName.setText(data.getUsername());
-		//Txt_Matricule.setText(data.getMatricule());
-		//Txt_UserPassword.setText(data.getPassword());
-	    //Txt_Type.setValue(data.getType());
-	
-		 
-	}
+
    
 // code pour ajouter un un produit a la table de ventes 
 	public void Produit_Ajouter() {
@@ -326,6 +320,52 @@ public class CaissierController implements Initializable{
 		public void Vente_Recherche() {
 			importer();
 		}
+		
+		//code pour supprimer 
+		
+		public void Vente_Supprimer() {
+			/*if (JOptionPane.showConfirmDialog(this, "est ce que tu es sure que tu veux supprimer ", "Attention",
+	                JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION) { */
+	            db.queryDelete("vente", "id=" + Id_Del);
+	        /*} else {
+	            return;
+	        }*/
+	        importer();
+	        total();
+	    
+		}
+		
+		public void Vente_Effacer() {
+			
+	       /* if (JOptionPane.showConfirmDialog(this,"est ce que tu es sure que tu veux supprimer","attention", 
+	                JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION) {*/
+	            db.queryDelete("vente","num_facture LIKE '%" +invoice+ "%' ");
+	        /*} else {
+	            return;
+	        }*/
+	        actualiser();
+	        total();
+		}
+		
+		public void  actualiser() {
+			ventedata=new VenteData();
+			ventedata.setId("");
+			ventedata.setnum_facture("");
+			ventedata.setPrix_Vente("");
+			ventedata.setStock_Sortie("");
+			ventedata.setSub_Total("");
+			Table_Vente.getItems().add(ventedata);
+		}
+		
+		 public void Vente_Mous(MouseEvent ev) {
+			   ventedata=new VenteData();
+				ventedata = Table_Vente.getSelectionModel().getSelectedItem();
+				invoice=ventedata.getnum_facture();
+						Id_Del=ventedata.getId();
+			
+				 
+			}
+		 
 		public boolean test_stock() throws SQLException {
 			int old=0,dec=0;
 	        boolean teststock;
