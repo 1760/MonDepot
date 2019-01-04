@@ -82,6 +82,7 @@ public class BDD {
 			statement = connection.createStatement();
 			statement.executeUpdate(sql);
 			result = sql;
+			
 
 		} catch (SQLException ex) {
 			result = ex.toString();
@@ -105,10 +106,17 @@ public class BDD {
 
 		connexionDatabase();
 		SQL = "SELECT * FROM " + nomTable + " WHERE " + Etat;
+		executionQuery(SQL);
 		return this.executionQuery(SQL);
 
 	}
+   
+	public ResultSet querySelectAllFacNum() {
+		connexionDatabase();
+		SQL = "call generate_next('TB')";
+		return this.executionQuery(SQL);
 
+	}
 	/*
 	 * fonction pour sélectionner une ou plusieurs colonnes d´une table par exemple
 	 * select nom,prenom from table

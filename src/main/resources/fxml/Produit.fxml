@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.web.HTMLEditor?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="main-panel" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="zambou.test.ProduitController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="1118.0" styleClass="main-panel" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="zambou.test.ProduitController">
    <top>
       <Label prefHeight="38.0" prefWidth="126.0" text="Produit" BorderPane.alignment="CENTER">
          <font>
@@ -25,7 +25,7 @@
       </Label>
    </top>
    <center>
-      <TableView fx:id="Table_Produit" onMouseClicked="#zams" prefHeight="160.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="Table_Produit" onMouseClicked="#zams" prefHeight="108.0" prefWidth="904.0" BorderPane.alignment="CENTER">
         <columns>
         
         	<TableColumn text="Id-Header">
@@ -94,7 +94,7 @@
       
    </center>
    <bottom>
-      <GridPane prefHeight="286.0" prefWidth="599.0" BorderPane.alignment="CENTER">
+      <GridPane prefHeight="322.0" prefWidth="919.0" BorderPane.alignment="CENTER">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -115,12 +115,12 @@
                   <Insets left="120.0" />
                </GridPane.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#Produit_Supprimer"  prefHeight="25.0" prefWidth="100.0" text="Supprimer" GridPane.columnIndex="2">
+            <Button mnemonicParsing="false" onAction="#Produit_Supprimer" prefHeight="25.0" prefWidth="100.0" text="Supprimer" GridPane.columnIndex="2">
                <GridPane.margin>
                   <Insets left="10.0" />
                </GridPane.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#Produit_Actualiser"  prefHeight="25.0" prefWidth="100.0" text="Actualiser" GridPane.columnIndex="2">
+            <Button mnemonicParsing="false" onAction="#Produit_Actualiser" prefHeight="25.0" prefWidth="100.0" text="Actualiser" GridPane.columnIndex="2">
                <GridPane.margin>
                   <Insets left="120.0" />
                </GridPane.margin>
@@ -132,32 +132,32 @@
             </Label>
             <Label prefHeight="25.0" prefWidth="80.0" text="Prix" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="10.0" top="120.0" />
+                  <Insets bottom="60.0" left="10.0" top="120.0" />
                </GridPane.margin>
             </Label>
             <Label prefHeight="25.0" prefWidth="80.0" text="Remise %" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="10.0" top="60.0" />
+                  <Insets bottom="90.0" left="10.0" top="60.0" />
                </GridPane.margin>
             </Label>
             <Label prefHeight="25.0" prefWidth="80.0" text="Fournisseur" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="10.0" />
+                  <Insets bottom="120.0" left="10.0" />
                </GridPane.margin>
             </Label>
             <TextField fx:id="Txt_Fournisseur" prefHeight="25.0" prefWidth="80.0" promptText="four" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="100.0" right="30.0" />
+                  <Insets bottom="120.0" left="100.0" right="30.0" />
                </GridPane.margin>
             </TextField>
             <TextField fx:id="Txt_Remise" prefHeight="25.0" prefWidth="80.0" promptText="remise" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="100.0" right="30.0" top="60.0" />
+                  <Insets bottom="90.0" left="100.0" right="30.0" top="60.0" />
                </GridPane.margin>
             </TextField>
             <TextField fx:id="Txt_Prix" prefHeight="25.0" prefWidth="80.0" promptText="prix" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="100.0" right="30.0" top="120.0" />
+                  <Insets bottom="60.0" left="100.0" right="30.0" top="120.0" />
                </GridPane.margin>
             </TextField>
             <Label prefHeight="25.0" prefWidth="150.0" text="Recherche Par Categorie" GridPane.columnIndex="2" GridPane.rowIndex="1">
@@ -182,12 +182,12 @@
             </TextField>
             <Label prefHeight="25.0" prefWidth="80.0" text="Code_Produit" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="10.0" />
+                  <Insets bottom="120.0" left="10.0" />
                </GridPane.margin>
             </Label>
             <Label prefHeight="25.0" prefWidth="80.0" text="Reference" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="10.0" top="60.0" />
+                  <Insets bottom="90.0" left="10.0" top="60.0" />
                </GridPane.margin>
             </Label>
             <Label prefHeight="25.0" prefWidth="80.0" text="Rangement" GridPane.rowIndex="1">
@@ -197,7 +197,7 @@
             </Label>
             <Label prefHeight="25.0" prefWidth="80.0" text="Designation" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="10.0" top="120.0" />
+                  <Insets bottom="60.0" left="10.0" top="120.0" />
                </GridPane.margin>
             </Label>
             <TextField fx:id="Txt_Rangement" prefHeight="25.0" prefWidth="80.0" promptText="ran" GridPane.rowIndex="1">
@@ -207,17 +207,17 @@
             </TextField>
             <TextField fx:id="Txt_Designation" prefHeight="25.0" prefWidth="80.0" promptText="des" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="100.0" right="30.0" top="120.0" />
+                  <Insets bottom="60.0" left="100.0" right="30.0" top="120.0" />
                </GridPane.margin>
             </TextField>
             <TextField fx:id="Txt_Reference" prefHeight="25.0" prefWidth="80.0" promptText="ref" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="100.0" right="30.0" top="60.0" />
+                  <Insets bottom="90.0" left="100.0" right="30.0" top="60.0" />
                </GridPane.margin>
             </TextField>
             <TextField fx:id="Txt_Produit" prefHeight="25.0" prefWidth="80.0" promptText="prod" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="100.0" right="30.0" />
+                  <Insets bottom="120.0" left="100.0" right="30.0" />
                </GridPane.margin>
             </TextField>
             <TextField fx:id="Txt_Stock" prefHeight="25.0" prefWidth="80.0" promptText="stoc" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -225,6 +225,26 @@
                   <Insets left="100.0" right="30.0" top="180.0" />
                </GridPane.margin>
             </TextField>
+            <TextField fx:id="Txt_Path" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="210.0" right="10.0" />
+               </GridPane.margin>
+            </TextField>
+            <Button mnemonicParsing="false" onAction="#File_Search" prefHeight="25.0" prefWidth="160.0" text="Recherche fichier" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="110.0" left="10.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#Excel_Importer" prefHeight="30.0" prefWidth="100.0" text="Importer" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="110.0" left="200.0" />
+               </GridPane.margin>
+            </Button>
+            <DatePicker>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </DatePicker>
          </children>
       </GridPane>
    </bottom>

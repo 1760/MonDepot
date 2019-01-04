@@ -2,10 +2,15 @@ afrique\cm\dla\zambou\snack\bean\TableData.class
 zambou\test\a\ResultSetTableModel.class
 afrique\cm\dla\zambou\snack\bean\LoginData.class
 zambou\test\a\BDD.class
+afrique\cm\dla\zambou\snack\bean\ProduitData.class
 zambou\test\LoginController.class
+zambou\test\CaissierController.class
 zambou\test\MainApp.class
-zambou\test\PersonnelController.class
 zambou\test\HelloController.class
+zambou\test\LoginController21.class
 zambou\test\DirecteurController.class
+afrique\cm\dla\zambou\snack\bean\LoginData11.class
+zambou\test\ProduitController.class
+afrique\cm\dla\zambou\snack\bean\VenteData.class
 zambou\test\a\Parameter.class
 zambou\test\Bier.class

@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.web.HTMLEditor?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="main-panel" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="zambou.test.PersonnelController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="672.0" prefWidth="1232.0" styleClass="main-panel" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="zambou.test.PersonnelController1">
    <top>
       <Label prefHeight="38.0" prefWidth="126.0" text="Personnel" BorderPane.alignment="CENTER">
          <font>
@@ -25,35 +25,35 @@
       </Label>
    </top>
    <center>
-      <TableView fx:id="Table_User" onMouseClicked="#zams" prefHeight="160.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="Table_User" onMouseClicked="#zams" prefHeight="315.0" prefWidth="1193.0" BorderPane.alignment="CENTER">
         <columns>
         
-        	<TableColumn text="Id-Header">
+        	<TableColumn prefWidth="116.0" text="Id-Header">
             	<cellValueFactory>
                 	<PropertyValueFactory property="id" />
                 </cellValueFactory>
             </TableColumn>
         
         
-        	<TableColumn text="Matricule">
+        	<TableColumn prefWidth="116.0" text="Matricule">
             	<cellValueFactory>
                 	<PropertyValueFactory property="matricule" />
                 </cellValueFactory>
             </TableColumn>
         
-        	<TableColumn text="Username">
+        	<TableColumn prefWidth="102.0" text="Username">
             	<cellValueFactory>
                 	<PropertyValueFactory property="username" />
                 </cellValueFactory>
             </TableColumn>
         
-        	<TableColumn text="Password">
+        	<TableColumn prefWidth="101.0" text="Password">
             	<cellValueFactory>
                 	<PropertyValueFactory property="password" />
                 </cellValueFactory>
             </TableColumn>
         
-        	<TableColumn text="Type">
+        	<TableColumn prefWidth="108.0" text="Type">
             	<cellValueFactory>
                 	<PropertyValueFactory property="type" />
                 </cellValueFactory>
@@ -70,7 +70,7 @@
       
    </center>
    <bottom>
-      <GridPane prefHeight="286.0" prefWidth="599.0" BorderPane.alignment="CENTER">
+      <GridPane prefHeight="341.0" prefWidth="1217.0" BorderPane.alignment="CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -80,24 +80,24 @@
           <RowConstraints maxHeight="266.0" minHeight="10.0" prefHeight="213.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" onAction="#Ajouter_Personnel" prefHeight="25.0" prefWidth="100.0" text="Ajouter">
+            <Button mnemonicParsing="false" onAction="#Personnel_Ajouter" prefHeight="25.0" prefWidth="100.0" text="Ajouter">
                <GridPane.margin>
                   <Insets left="10.0" />
                </GridPane.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Modifier">
+            <Button mnemonicParsing="false" onAction="#Personnel_Modifier" prefHeight="25.0" prefWidth="100.0" text="Modifier">
                <GridPane.margin>
                   <Insets left="120.0" />
                </GridPane.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Supprimer" GridPane.columnIndex="1">
+            <Button mnemonicParsing="false" onAction="#Personnel_Supprimer" prefHeight="39.0" prefWidth="110.0" text="Supprimer" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets left="10.0" />
                </GridPane.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Actualiser" GridPane.columnIndex="1">
+            <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="119.0" text="Actualiser" GridPane.columnIndex="1">
                <GridPane.margin>
-                  <Insets left="120.0" />
+                  <Insets left="140.0" />
                </GridPane.margin>
             </Button>
             <Label prefHeight="25.0" prefWidth="80.0" text="Type" GridPane.rowIndex="1">
@@ -107,32 +107,32 @@
             </Label>
             <Label prefHeight="25.0" prefWidth="80.0" text="Password" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="10.0" top="120.0" />
+                  <Insets left="10.0" top="100.0" />
                </GridPane.margin>
             </Label>
             <Label prefHeight="25.0" prefWidth="80.0" text="Username" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="10.0" top="60.0" />
+                  <Insets left="10.0" top="10.0" />
                </GridPane.margin>
             </Label>
             <Label prefHeight="25.0" prefWidth="80.0" text="Matricule" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0" top="-80.0" />
                </GridPane.margin>
             </Label>
             <TextField fx:id="Txt_Matricule" prefHeight="25.0" prefWidth="80.0" promptText="mat" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="100.0" right="30.0" />
+                  <Insets left="100.0" right="30.0" top="-80.0" />
                </GridPane.margin>
             </TextField>
             <TextField fx:id="Txt_UserName" prefHeight="25.0" prefWidth="80.0" promptText="user" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="100.0" right="30.0" top="60.0" />
+                  <Insets left="100.0" right="30.0" top="10.0" />
                </GridPane.margin>
             </TextField>
             <TextField fx:id="Txt_UserPassword" prefHeight="25.0" prefWidth="80.0" promptText="pass" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="100.0" right="30.0" top="120.0" />
+                  <Insets left="100.0" right="30.0" top="100.0" />
                </GridPane.margin>
             </TextField>
             <ComboBox fx:id="Txt_Type" prefHeight="25.0" prefWidth="150.0" GridPane.rowIndex="1">
@@ -140,24 +140,24 @@
                   <Insets left="100.0" top="180.0" />
                </GridPane.margin>
             </ComboBox>
-            <Label prefHeight="25.0" prefWidth="150.0" text="Recherche Par Categorie" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Label prefHeight="27.0" prefWidth="200.0" text="Recherche Par Categorie" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="10.0" />
                </GridPane.margin>
             </Label>
-            <ComboBox prefWidth="150.0" fx:id="Com_Rech" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <ComboBox fx:id="Com_Rech" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="180.0" right="20.0" />
+                  <Insets left="250.0" right="20.0" />
                </GridPane.margin>
             </ComboBox>
-            <Button mnemonicParsing="false" prefHeight="25.0" onAction="#Personnel_Recherche" prefWidth="100.0" text="Recherche" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button mnemonicParsing="false" onAction="#Personnel_Recherche" prefHeight="39.0" prefWidth="109.0" text="Recherche" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="10.0" top="120.0" />
                </GridPane.margin>
             </Button>
             <TextField fx:id="Txt_Rech" prefHeight="25.0" prefWidth="80.0" promptText="rech" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="130.0" right="20.0" top="120.0" />
+                  <Insets left="160.0" right="20.0" top="120.0" />
                </GridPane.margin>
             </TextField>
          </children>

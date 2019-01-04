@@ -5,7 +5,7 @@ public class VenteData {
 	private String id;
 	private String Prix_Vente;
 	private String Stock_Sortie;
-	private String num_facture;
+	private String Num_Facture;
 	private String Sub_Total;
 
 	public String getId() {
@@ -32,12 +32,12 @@ public class VenteData {
 		this.Stock_Sortie = Stock_Sortie;
 	}
 
-	public String getnum_facture() {
-		return  num_facture;
+	public String getNum_Facture() {
+		return  Num_Facture;
 	}
 
-	public void setnum_facture(String  num_facture) {
-		this. num_facture =  num_facture;
+	public void setNum_Facture(String  num_facture) {
+		this.Num_Facture =  num_facture;
 	}
 
 	public String getSub_Total() {
@@ -47,5 +47,5 @@ public class VenteData {
 	public void setSub_Total(String Sub_Total) {
 		this.Sub_Total = Sub_Total;
 	}
-
+    
 }

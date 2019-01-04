@@ -18,9 +18,10 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import zambou.test.a.BDD;
+import zambou.test.a.ShowAlertError;
 import zambou.test.a.Parameter;
 
-public class PersonnelController implements Initializable {
+public class PersonnelController1 implements Initializable {
 
 	@FXML
 	private TableView<TableData> Table_User;
@@ -39,29 +40,26 @@ public class PersonnelController implements Initializable {
 	private ComboBox<String>Txt_Type1;*/
 	@FXML
 	private TextField Txt_Rech;
-	private static final Logger log = LoggerFactory.getLogger(PersonnelController.class);
+	private static final Logger log = LoggerFactory.getLogger(PersonnelController1.class);
 	BDD db;
+	ShowAlertError logmessage;
 	ResultSet rs;
 	private  LoginData Data;
 	private TableData data;
-	//private Bier arthur;
+	
 	String id_Tmp,Matricule_Tmp,Password_Tmp,Type_Tmp,Username_Tmp;
 
 
-	public PersonnelController() {
+	public PersonnelController1() {
 
 		BDD db = new BDD(new Parameter().HOST_DB, new Parameter().USERNAME_DB, new Parameter().PASSWORD_DB,
 				new Parameter().IPHOST, new Parameter().PORT);
-		//table();
-	}
+		
 
-	 
-	
+	}
 	
 	public void Ajouter_Personnel() {
 		System.out.println("ssss");
-		
-		//table();
 	}
 
 	public void table() {
@@ -84,13 +82,11 @@ public class PersonnelController implements Initializable {
 			Password_Tmp=rs.getString("password");
 			Type_Tmp=rs.getString("type");
 			Username_Tmp=rs.getString("username");
-			System.out.println(id_Tmp);
 			data.setId(id_Tmp);
 			data.setMatricule(Matricule_Tmp);
 			data.setPassword(Password_Tmp);
 			data.setType(Type_Tmp);
 			data.setUsername(Username_Tmp);
-			System.out.println(data.getId());
 			Table_User.getItems().add(data);
 			data = new TableData();
 			}
@@ -110,15 +106,11 @@ public class PersonnelController implements Initializable {
 	}
 	public void actualiser() {
 		
-		Data = new LoginData();
-		Data.setUsername("");
-		Data.setMatricule("");
-		Data.setPassword("");
-		Data.setType("Type");
-		Txt_Matricule.setText(Data.getMatricule());
-		Txt_UserName.setText(Data.getUsername());
-		Txt_UserPassword.setText(Data.getPassword());
-	    Txt_Type.setValue(Data.getType());
+		Txt_Matricule.setText("");
+		Txt_UserName.setText("");
+		Txt_UserPassword.setText("");
+	    Txt_Type.getItems().removeAll("caissier","directeur");
+	    Com_Rech.getItems().removeAll("Id","Matricule","Username","Type"); 
 	}
 	
 	public void zams(MouseEvent ev) {
@@ -135,46 +127,59 @@ public class PersonnelController implements Initializable {
 	// code pour ajouter un personnel
 	public void Personnel_Ajouter() {
 		Data = new LoginData();
+		ShowAlertError logmessage=new ShowAlertError();
 		Data.setMatricule(Txt_Matricule.getText());
-		Data.setName(Txt_UserName.getText());
+		Data.setUsername(Txt_UserName.getText());
 		Data.setPassword(Txt_UserPassword.getText());
+		String ContentText="Veuillez entrer quelque chose s´il vous plait!";
+		String Title="Attention";
 		String selectedItemValue = Txt_Type.getSelectionModel().getSelectedItem();
 		Data.setType(selectedItemValue);
 
 		if (Data.getMatricule().equals("") || Data.getUsername().equals("") || Data.getPassword().equals("")
 				|| Data.getType().equals("Type")) {
 			// JOptionPane.showMessageDialog(this, "SVP entrer les informations complete");
+			logmessage.showAlertWithDefaultHeaderTextAjouter(Title,ContentText);
+			
+			
 		} else {
+			BDD db = new BDD(new Parameter().HOST_DB, new Parameter().USERNAME_DB, new Parameter().PASSWORD_DB,
+					new Parameter().IPHOST, new Parameter().PORT);
 			String[] colon = { "id_user", "username", "password", "type" };
 			String[] inf = { Data.getMatricule(), Data.getUsername(), Data.getPassword(), Data.getType().toString() };
 			System.out.println(db.queryInsert("utilisateur", colon, inf));
+			Table_User.getItems().clear();
 			table();
-			actualiser();
 		}
 	}
 
 	// code pour modifier les données d´un employé
-	public void Personnel_Modifer() {
+	public void Personnel_Modifier() {
+		ShowAlertError logmessage=new ShowAlertError();
 		Data = new LoginData();
 		Data.setMatricule(Txt_Matricule.getText());
-		Data.setName(Txt_UserName.getText());
+		Data.setUsername(Txt_UserName.getText());
 		Data.setPassword(Txt_UserPassword.getText());
 		String selectedItemValue = Txt_Type.getSelectionModel().getSelectedItem();
+		String ContentText="Veuillez entrer quelque chose s´il vous plait!";
+		String Title="Attention";
 		Data.setType(selectedItemValue);
-		if (Data.getMatricule().equals("") || Data.getUsername().equals("") || Data.getPassword().equals("")
-				|| Data.getType().equals("Type")) {
-			// JOptionPane.showMessageDialog(this, "SVP entrer les informations complete");
-		} else {
-			
+	if (Data.getMatricule().equals("") || Data.getUsername().equals("") || Data.getPassword().equals("")
+				|| Data.getType().equals("")){
+			logmessage.showAlertWithDefaultHeaderTextAjouter(Title,ContentText);
+		}else{
+		BDD db = new BDD(new Parameter().HOST_DB, new Parameter().USERNAME_DB, new Parameter().PASSWORD_DB,
+				new Parameter().IPHOST, new Parameter().PORT);
 			 String[] colon = {"id_user", "username", "password", "type"}; 
 			 String[] inf ={Data.getMatricule(), Data.getUsername(), Data.getPassword(),
 			 Data.getType().toString() }; 
 			 data = Table_User.getSelectionModel().getSelectedItem();
-			 String id =data.getId();
+			 String id =data.getMatricule();
 			// String.valueOf(Table_User.getValueAt(Table_User.getSelectedRow(), 0));
-			 System.out.println(db.queryUpdate("utilisateur", colon, inf, "id='" + id + "'"));
-			table();
+			 System.out.println(db.queryUpdate("utilisateur", colon, inf, "id_user='" + id + "'"));
 			actualiser();
+			Table_User.getItems().clear();
+			table();
 		}
 	}
 	
@@ -182,17 +187,25 @@ public class PersonnelController implements Initializable {
 
 	// code pour supprimer un personnel
 	public void Personnel_Supprimer() {
+		ShowAlertError logmessage=new ShowAlertError();
+		String ContentText="Voulez vraiment supprimer cet Utilisateur?";
+		String Title="Supprimer un Utilisateur";
+		String DataBaseTable="utilisateur";
 		Table_User.getSelectionModel().getSelectedItem();
 
 		  data = Table_User.getSelectionModel().getSelectedItem();
-		  String id= data.getId();
+		  String id= data.getMatricule();
 		 /*String.valueOf(Table_User.getValueAt(Table_User.getSelectedRow(),0));
 		  if (JOptionPane.showConfirmDialog(this,
-		 * "est ce que tu es sure que tu veux suuprimer", "attention!!!",
+		 * "est ce que tu es sure que tu veux suprimer", "attention!!!",
 		 * JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION) {
 		 * db.queryDelete("utilisateur", "id=" + id); } else { return; }
 		 */
-		db.queryDelete("utilisateur", "id=" + id);
+		  
+		  
+logmessage.showAlertConfirmationDelete(Title, ContentText, DataBaseTable, id);
+        actualiser();
+		Table_User.getItems().clear();
 		table();
 	}
 

@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane fx:id="RootPanne" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" 
-minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="main-panel" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="zambou.test.LoginController">
-    
-
-  <center>
-      <GridPane BorderPane.alignment="CENTER">
+<BorderPane fx:id="RootPanne" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="657.0" prefWidth="1034.0" styleClass="main-panel" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="zambou.test.LoginController">
+   <bottom>
+      <BorderPane prefHeight="200.0" prefWidth="744.0" BorderPane.alignment="CENTER">
+         <center>
+            <Label fx:id="messageLabel" text="" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </bottom>
+   <left>
+      <GridPane prefHeight="623.0" prefWidth="1035.0" BorderPane.alignment="CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -18,31 +23,31 @@ minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="main-panel
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints vgrow="SOMETIMES" />
-            <RowConstraints vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="44.0" minHeight="20.0" prefHeight="44.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="82.0" minHeight="53.0" prefHeight="53.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="103.0" minHeight="10.0" prefHeight="89.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label prefHeight="17.0" prefWidth="38.0" text="Nom:" textAlignment="CENTER" GridPane.rowIndex="1">
+            <Label prefHeight="27.0" prefWidth="53.0" text="Nom:" textAlignment="CENTER" GridPane.rowIndex="2">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets></Label>
-            <Label text="Password" GridPane.rowIndex="2">
+            <Label text="Password" GridPane.rowIndex="3">
                <opaqueInsets>
                   <Insets left="20.0" />
                </opaqueInsets></Label>
-            <PasswordField fx:id="userPassword" prefHeight="25.0" prefWidth="181.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="2">
+            <PasswordField fx:id="userPassword" prefHeight="25.0" prefWidth="181.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets right="20.0" />
                </GridPane.margin>
             </PasswordField>
-            <TextField fx:id="userLogin" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
+            <TextField fx:id="userLogin" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="20.0" />
                </GridPane.margin>
             </TextField>
-            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
                <children>
                   <Button mnemonicParsing="false" onAction="#userLogin" text="Login">
                      <HBox.margin>
@@ -56,14 +61,8 @@ minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="main-panel
                   </Button>
                </children>
             </HBox>
+            <ImageView fitHeight="167.0" fitWidth="356.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
          </children>
       </GridPane>
-   </center>
-   <bottom>
-      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <center>
-            <Label fx:id="messageLabel" text="" BorderPane.alignment="CENTER" />
-         </center>
-      </BorderPane>
-   </bottom>
+   </left>
 </BorderPane>
